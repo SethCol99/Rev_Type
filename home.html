@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Document</title>
-    <link rel="stylesheet" href="vis.css"
+    <link rel="stylesheet" href="vis.css">
 </head>
 <body>
     <nav>
@@ -30,40 +30,7 @@
     <button id="hint">Hint</button>
     <button id="give_up">Give up</button>
 
-<script>
-    document.getElementById("give_up").addEventListener("click", finish);
-    document.getElementById("hint").addEventListener("click", next);
+<script src="log.js"></script>
 
-    let bank = "zyxwvutsrqponmlkjihgfedcba";
-
-    function newLetter() {    
-
-    var cur = document.getElementById("cur_letter").value;
-
-
-        if(cur == bank.charAt(0)) {
-            
-            cur = "";
-            
-            
-            document.getElementById("letters").innerHTML += bank.charAt(0) + " ";
-            bank = bank.substring(1);
-            }
-    
-    }
-
-    function finish(){
-        for(var i = 0; i < bank.length; i++){
-
-            document.getElementById("letters").innerHTML += bank.charAt(i) + " ";
-        }
-    }
-    
-    function next(){
-         document.getElementById("letters").innerHTML += bank.charAt(0) + " ";
-         bank = bank.substring(1);
-
-    }
-</script>
 </body>
 </html>

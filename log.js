@@ -8,12 +8,10 @@ document.getElementById("give_up").addEventListener("click", finish);
     var cur = document.getElementById("cur_letter").value;
 
 
-        if(cur == bank.charAt(0)) {
-            
-            cur = "";
-            
+        if(cur == bank.charAt(0)) {            
             
             document.getElementById("letters").innerHTML += bank.charAt(0) + " ";
+            document.getElementById("cur_letter").value = "";
             bank = bank.substring(1);
             }
     

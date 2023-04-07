@@ -24,7 +24,7 @@
 
     <div id="typing">
         <label for="cur_letter" id="current_letter">Next Letter</label>
-        <input type="text" id="cur_letter" oninput="newLetter()">
+        <input oninput = "setTimeout(newLetter, 200)" type="text" id="cur_letter" oninput="newLetter()">
     </div>
     
     <button id="hint">Hint</button>

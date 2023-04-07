@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="vis.css"
+</head>
+<body>
+    <nav>
+        something
+    </nav>
+    <header>
+        <h2>Welcome to dis Rev Type Program</h2>
+        <h3>Learn the Alphabet backwards by typing it </h3>
+        <h5>note, this program is in no way inspired by the alleged field sobriety
+            test of reciting the alphabet backwards and is soooooo totallyyyyyyy,
+            not at alllllll intended to help you pass it if you ever get hit with it</h5>
+        </h5>
+    </header>
+
+    <div id="letters">
+        <p>Letters so far:</p><br>
+    </div>
+
+    <div id="typing">
+        <label for="cur_letter" id="current_letter">Next Letter</label>
+        <input type="text" id="cur_letter" oninput="newLetter()">
+    </div>
+    
+    <button id="hint">Hint</button>
+    <button id="give_up">Give up</button>
+
+<script>
+    document.getElementById("give_up").addEventListener("click", finish);
+    document.getElementById("hint").addEventListener("click", next);
+
+    let bank = "zyxwvutsrqponmlkjihgfedcba";
+
+    function newLetter() {    
+
+    var cur = document.getElementById("cur_letter").value;
+
+
+        if(cur == bank.charAt(0)) {
+            
+            cur = "";
+            
+            
+            document.getElementById("letters").innerHTML += bank.charAt(0) + " ";
+            bank = bank.substring(1);
+            }
+    
+    }
+
+    function finish(){
+        for(var i = 0; i < bank.length; i++){
+
+            document.getElementById("letters").innerHTML += bank.charAt(i) + " ";
+        }
+    }
+    
+    function next(){
+         document.getElementById("letters").innerHTML += bank.charAt(0) + " ";
+         bank = bank.substring(1);
+
+    }
+</script>
+</body>
+</html>
